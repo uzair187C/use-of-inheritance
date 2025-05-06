@@ -1,0 +1,49 @@
+/* Quick OOP Problem (with Inheritance)
+Question:
+Make a simple program using inheritance that:
+Has a base class Person with name and age. -->
+A derived class Student with rollNo and marks. -->
+Constructor should initialize everything. -- >
+Show details using a function display() in Student. */
+#include <iostream>
+using namespace std;
+
+class person
+{
+public:
+    string name;
+    int age;
+    person(string a, int b)
+    {
+        name = a;
+        age = b;
+    }
+};
+class student : public person
+{
+public:
+    int rollno;
+    int marks;
+    student(string a , int b , int c, int d) :  person ( a , b )  
+    {
+        rollno = c;
+        marks = d;
+    }
+    void display(void);
+};
+void student ::display() 
+{
+    cout << "the name of the student is " << name << endl
+         << " the age of the student is " << age << endl
+         << " the marks of the student with the roll no " << rollno << "are " << marks;
+}
+int main()
+{
+
+    person p1();
+    student s1("ali ", 18 , 452, 90);
+    s1.display ();
+
+
+    return 0;
+}
